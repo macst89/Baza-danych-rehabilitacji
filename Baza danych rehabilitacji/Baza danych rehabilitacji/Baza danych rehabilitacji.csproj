@@ -55,14 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\Rejestracja.xaml.cs">
-      <DependentUpon>Rejestracja.xaml</DependentUpon>
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PatientAdress.cs" />
+    <Compile Include="Views\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Skierowanie.xaml.cs">
-      <DependentUpon>Skierowanie.xaml</DependentUpon>
+    <Compile Include="Views\Referral.xaml.cs">
+      <DependentUpon>Referral.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Wizyta_lekarza.xaml.cs">
-      <DependentUpon>Wizyta_lekarza.xaml</DependentUpon>
+    <Compile Include="Views\Visit.xaml.cs">
+      <DependentUpon>Visit.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -76,15 +78,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\Rejestracja.xaml">
+    <Page Include="Views\Register.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Skierowanie.xaml">
+    <Page Include="Views\Referral.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Wizyta_lekarza.xaml">
+    <Page Include="Views\Visit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,9 +118,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -33,14 +33,14 @@ namespace Baza_danych_rehabilitacji
                 string pesel = txtPesel.Text;
                 int plec = Convert.ToInt32(pesel.Substring(9, 1));
                 string data_ur = "19" + pesel.Substring(0, 2) + "-" + pesel.Substring(2, 2) + "-" + pesel.ToString().Substring(4, 2);
-                txtDataUr.Text = data_ur;
-                if (plec / 2 != 0)
+                txtBirthDate.Text = data_ur;
+                if (plec % 2 != 0)
                 {
-                    txtPlec.Text = "M";
+                    txtGender.Text = "M";
                 }
                 else
                 {
-                    txtPlec.Text = "K";
+                    txtGender.Text = "K";
                 }
                 
             }
