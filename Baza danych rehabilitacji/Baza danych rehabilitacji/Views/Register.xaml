@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Baza_danych_rehabilitacji"
         mc:Ignorable="d"
-        Title="Rejestracja" Height="412" Width="726.049">
+        Title="Rejestracja" Height="503.333" Width="744.716">
     <Grid>
-        
+
         <GroupBox x:Name="gbDanePac" Header="Dane Pacjenta" Margin="0,20,4,0" VerticalAlignment="Top" Height="161"/>
         <Grid Height="37" VerticalAlignment="Top">
             <Menu x:Name="menu" Margin="0,0,0,15">
@@ -79,21 +79,24 @@
             <ListBoxItem Content="Represjonowany"/>
         </ListBox>
 
-        <GroupBox x:Name="gbAdresses" Header="Adres zameldowania pacjenta" Margin="0,186,4,37">
-            <ListBox x:Name="lbAdresses" HorizontalAlignment="Left" Height="80" Margin="10,46,-2,0" VerticalAlignment="Top" Width="694" />
-        </GroupBox>
+      
         <Grid DataContext="{Binding ElementName=lbAdresses, Path=SelectedItem}">
-        <Label x:Name="lblStreet" Content="Ulica" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtStreet" HorizontalAlignment="Left" Height="23" Margin="48,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167"/>
-        <Label x:Name="lblStreetNo" Content="Nr blok/mieszk." HorizontalAlignment="Left" Margin="217,210,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtStreetNo" HorizontalAlignment="Left" Height="23" Margin="310,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="42"/>
-        <Label x:Name="lblPostalCode" Content="Kod pocztowy" HorizontalAlignment="Left" Margin="358,210,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPostalCode" HorizontalAlignment="Left" Height="23" Margin="443,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="42"/>
-        <Label x:Name="lblTown" Content="Miejscowość" HorizontalAlignment="Left" Margin="499,210,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtTown" Height="23" Margin="576,213,26,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+            <Label x:Name="lblStreet" Content="Ulica" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtStreet" HorizontalAlignment="Left" Height="23" Margin="48,213,0,0" TextWrapping="Wrap" Text="{Binding Path=Street}" VerticalAlignment="Top" Width="167"/>
+            <Label x:Name="lblStreetNo" Content="Nr blok/mieszk." HorizontalAlignment="Left" Margin="217,210,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtStreetNo" HorizontalAlignment="Left" Height="23" Margin="310,213,0,0" TextWrapping="Wrap" Text="{Binding Path=StreetNo}" VerticalAlignment="Top" Width="42"/>
+            <Label x:Name="lblPostalCode" Content="Kod pocztowy" HorizontalAlignment="Left" Margin="358,210,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtPostalCode" HorizontalAlignment="Left" Height="23" Margin="443,213,0,0" TextWrapping="Wrap" Text="{Binding Path=PostalCode}" VerticalAlignment="Top" Width="42"/>
+            <Label x:Name="lblTown" Content="Miejscowość" HorizontalAlignment="Left" Margin="499,210,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtTown" Height="23" Margin="576,213,26,0" TextWrapping="Wrap" Text="{Binding Path=Town}" VerticalAlignment="Top"/>
+            <Button x:Name="btnSave" Content="Zapisz" HorizontalAlignment="Left" Margin="536,431,0,10" Width="75" Click="btnSave_Click"/>
+            <Button x:Name="btnExit" Content="Wyjdź" HorizontalAlignment="Left" Margin="621,431,0,10" Width="75"/>
+            <ListBox x:Name="lbAddresses" HorizontalAlignment="Left" Height="80" Margin="17,253,0,0"  VerticalAlignment="Top" Width="694" />
+            <Button x:Name="btnAdd" Content="Dodaj adres" HorizontalAlignment="Left" Margin="536,352,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+            <Button x:Name="btnRemove" Content="Usuń adres" HorizontalAlignment="Left" Margin="621,352,0,0" VerticalAlignment="Top" Width="75" Click="btnRemove_Click"/>
+            <Label x:Name="lbId" Content="Id" HorizontalAlignment="Left" Margin="408,38,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="433,41,0,0" TextWrapping="Wrap" Text="{Binding Path=PersonId}" VerticalAlignment="Top" Width="35" IsEnabled="False"/>
         </Grid>
-            <Button x:Name="btnSave" Content="Zapisz" HorizontalAlignment="Left" Margin="536,350,0,10" Width="75"/>
-        <Button x:Name="btnExit" Content="Wyjdź" HorizontalAlignment="Left" Margin="621,350,0,10" Width="75"/>
 
     </Grid>
 </Window>

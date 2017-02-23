@@ -56,7 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Patient.cs" />
-    <Compile Include="Models\PatientAdress.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Views\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>

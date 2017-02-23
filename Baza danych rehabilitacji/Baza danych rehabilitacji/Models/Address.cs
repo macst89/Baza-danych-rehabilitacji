@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace Baza_danych_rehabilitacji.Models
 {
-    public class PatientAdress
+    public class Address:Person
     {
         public string Street { get; set; }
         public string StreetNo { get; set; }
         public string PostalCode { get; set; }
         public string Town { get; set; }
+        
 
+        public override string ToString()
+        {
+            return "ul. " + Street + " " + StreetNo + ", " + PostalCode + " " + Town;
+        }
     }
 }

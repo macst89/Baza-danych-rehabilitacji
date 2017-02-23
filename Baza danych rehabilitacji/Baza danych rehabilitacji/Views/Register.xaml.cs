@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Baza_danych_rehabilitacji.Models;
 
 namespace Baza_danych_rehabilitacji
 {
@@ -22,8 +23,10 @@ namespace Baza_danych_rehabilitacji
         public Rejestracja()
         {
             InitializeComponent();
+            lbAddresses.ItemsSource = patient.PersonAddress;
         }
-
+        private Patient patient = new Patient();
+        
         
 
         private void txtPesel_LostFocus(object sender, RoutedEventArgs e)
@@ -46,6 +49,27 @@ namespace Baza_danych_rehabilitacji
             }
         }
 
-        
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                patient.AddAddress(txtStreet.Text, txtStreetNo.Text, txtTown.Text, txtPostalCode.Text);
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Brakuje danych w adresie. Uzupełnij adres.");
+            }
+
+        }
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            patient.PersonAddress.Remove(lbAddresses.SelectedItem as Address);
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
