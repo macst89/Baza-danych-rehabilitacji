@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Baza_danych_rehabilitacji.Models;
+using System.ComponentModel;
 
 namespace Baza_danych_rehabilitacji
 {
@@ -24,9 +25,11 @@ namespace Baza_danych_rehabilitacji
         {
             InitializeComponent();
             lbAddresses.ItemsSource = patient.PersonAddress;
+            
         }
-        private Patient patient = new Patient();
-        
+        List<Patient> patients = new List<Patient>();
+        Patient patient = new Patient();
+        Address address = new Address();
         
 
         private void txtPesel_LostFocus(object sender, RoutedEventArgs e)
@@ -51,9 +54,12 @@ namespace Baza_danych_rehabilitacji
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            ICollectionView view = CollectionViewSource.GetDefaultView(lbAddresses.ItemsSource);
             try
-            {
+            {             
                 patient.AddAddress(txtStreet.Text, txtStreetNo.Text, txtTown.Text, txtPostalCode.Text);
+                view.Refresh();
+                
             }
             catch(NullReferenceException)
             {
@@ -69,7 +75,12 @@ namespace Baza_danych_rehabilitacji
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            
+            patients.Add(patient);
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

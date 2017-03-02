@@ -1,11 +1,11 @@
-﻿<Window x:Class="Baza_danych_rehabilitacji.Rejestracja"
+﻿<Window x:Class="Baza_danych_rehabilitacji.Views.PatientList"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Baza_danych_rehabilitacji"
+        xmlns:local="clr-namespace:Baza_danych_rehabilitacji.Views"
         mc:Ignorable="d"
-        Title="Rejestracja" Height="503.333" Width="744.716">
+        Title="Lista pacjentów" Height="473.399" Width="737.243">
     <Grid>
         <Grid Height="37" VerticalAlignment="Top">
             <Menu x:Name="menu" Margin="0,0,0,15">
@@ -25,8 +25,8 @@
             </Menu>
 
         </Grid>
-        <GroupBox x:Name="gbDanePac" Header="Dane Pacjenta" Margin="0,20,4,0" VerticalAlignment="Top" Height="161"/>
-        
+        <GroupBox x:Name="gbPatientData" Header="Dane Pacjenta" Margin="0,20,4,0" VerticalAlignment="Top" Height="161"/>
+
         <Label x:Name="lblName" Content="Imię" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="48,40,0,0" TextWrapping="Wrap" Text="{Binding Path=Name}" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblSurname" Content="Nazwisko" HorizontalAlignment="Left" Margin="179,37,0,0" VerticalAlignment="Top"/>
@@ -58,39 +58,9 @@
         </ListBox>
         <Label x:Name="lbId" Content="Id" HorizontalAlignment="Left" Margin="408,38,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="433,41,0,0" TextWrapping="Wrap" Text="{Binding Path=PersonId}" VerticalAlignment="Top" Width="35" IsEnabled="False"/>
+        <Button x:Name="btnPrevious" Content="Poprzedni" HorizontalAlignment="Left" Margin="14,196,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnNext" Content="Następny" HorizontalAlignment="Left" Margin="105,196,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListBox ItemsSource="{Binding Path=patients}" x:Name="lbPatients" HorizontalAlignment="Left" Height="199" Margin="10,234,0,0" VerticalAlignment="Top" Width="709"/>
 
-        <Grid DataContext="{Binding ElementName=lbAddresses, Path=SelectedItem}">
-            <Label x:Name="lblStreet" Content="Ulica" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtStreet" HorizontalAlignment="Left" Height="23" Margin="48,213,0,0" TextWrapping="Wrap" Text="{Binding Path=Street}" VerticalAlignment="Top" Width="167"/>
-            <Label x:Name="lblStreetNo" Content="Nr blok/mieszk." HorizontalAlignment="Left" Margin="217,210,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtStreetNo" HorizontalAlignment="Left" Height="23" Margin="310,213,0,0" TextWrapping="Wrap" Text="{Binding Path=StreetNo}" VerticalAlignment="Top" Width="42"/>
-            <Label x:Name="lblPostalCode" Content="Kod pocztowy" HorizontalAlignment="Left" Margin="358,210,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtPostalCode" HorizontalAlignment="Left" Height="23" Margin="443,213,0,0" TextWrapping="Wrap" Text="{Binding Path=PostalCode}" VerticalAlignment="Top" Width="51"/>
-            <Label x:Name="lblTown" Content="Miejscowość" HorizontalAlignment="Left" Margin="499,210,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtTown" Height="23" Margin="576,213,26,0" TextWrapping="Wrap" Text="{Binding Path=Town}" VerticalAlignment="Top"/>
-            <Button x:Name="btnSave" Content="Zapisz" HorizontalAlignment="Left" Margin="536,431,0,10" Width="75" Click="btnSave_Click"/>
-            <Button x:Name="btnExit" Content="Wyjdź" HorizontalAlignment="Left" Margin="621,431,0,10" Width="75" Click="btnExit_Click"/>
-            
-               
-            
-        </Grid>
-        <ListBox x:Name="lbAddresses" HorizontalAlignment="Left" Height="80" Margin="17,253,0,0"  VerticalAlignment="Top" Width="694">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <TextBlock Text=" ul.: " FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Path=Street}" FontWeight="Bold"/>
-                        <TextBlock Text=", nr: " FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Path=StreetNo}"/>
-                        <TextBlock Text=", Kod pocztowy: " FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Path=PostalCode}"/>
-                        <TextBlock Text=", Miejscowość: " FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Path=Town}"/>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <Button x:Name="btnAdd" Content="Dodaj adres" HorizontalAlignment="Left" Margin="536,352,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
-        <Button x:Name="btnRemove" Content="Usuń adres" HorizontalAlignment="Left" Margin="621,352,0,0" VerticalAlignment="Top" Width="75" Click="btnRemove_Click"/>
     </Grid>
 </Window>

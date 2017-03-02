@@ -25,10 +25,7 @@ namespace Baza_danych_rehabilitacji
             InitializeComponent();
         }
 
-        private void btnRejestruj_Copy_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void btnRejestruj_Click(object sender, RoutedEventArgs e)
         {
@@ -43,6 +40,27 @@ namespace Baza_danych_rehabilitacji
                 MessageBox.Show("Okno rejestracji jest już otwarte.");
                 rejestracja.Close();
             }
+        }
+
+        private void btnDodajSkierowanie_Click(object sender, RoutedEventArgs e)
+        {
+            Rejestracja rejestracja = new Rejestracja();
+            if (rejestracja.IsActive == false)
+            {
+
+                rejestracja.Show();
+            }
+            else
+            {
+                MessageBox.Show("Okno rejestracji jest już otwarte.");
+                rejestracja.Close();
+            }
+
+        }
+
+        private void btnListaPacjentow_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
