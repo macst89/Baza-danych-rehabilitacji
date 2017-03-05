@@ -243,3 +243,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/Baza danych rehabilitacji/Baza danych rehabilitacji/packages.config

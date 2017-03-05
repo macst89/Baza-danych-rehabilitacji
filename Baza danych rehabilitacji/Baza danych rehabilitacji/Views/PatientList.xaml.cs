@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Baza_danych_rehabilitacji.Models;
-
+using System.ComponentModel;
 
 namespace Baza_danych_rehabilitacji.Views
 {
@@ -24,31 +24,13 @@ namespace Baza_danych_rehabilitacji.Views
         public PatientList()
         {
             InitializeComponent();
-            this.DataContext = patients;
-            lbPatients.ItemsSource = patients;
-            
-        }
-        Patient patient = new Patient();
-        List<Patient> patients = new List<Patient>();
 
-        private void txtPesel_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (txtPesel.Text != null && txtPesel.Text.Length == 11)
-            {
-                string pesel = txtPesel.Text;
-                int plec = Convert.ToInt32(pesel.Substring(9, 1));
-                string data_ur = "19" + pesel.Substring(0, 2) + "-" + pesel.Substring(2, 2) + "-" + pesel.ToString().Substring(4, 2);
-                txtBirthDate.Text = data_ur;
-                if (plec % 2 != 0)
-                {
-                    txtGender.Text = "M";
-                }
-                else
-                {
-                    txtGender.Text = "K";
-                }
+            ICollectionView view = CollectionViewSource.GetDefaultView(lbPatients.DataContext);
+            view.Refresh();
 
-            }
         }
+        
+
+
     }
 }

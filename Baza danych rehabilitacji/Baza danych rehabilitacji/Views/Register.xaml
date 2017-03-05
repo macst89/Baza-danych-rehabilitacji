@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Baza_danych_rehabilitacji"
         mc:Ignorable="d"
+        DataContext="{StaticResource patient}"
         Title="Rejestracja" Height="503.333" Width="744.716">
     <Grid>
         <Grid Height="37" VerticalAlignment="Top">
@@ -32,15 +33,15 @@
         <Label x:Name="lblSurname" Content="Nazwisko" HorizontalAlignment="Left" Margin="179,37,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="23" Margin="244,40,0,0" TextWrapping="Wrap" Text="{Binding Path=Surname}" VerticalAlignment="Top" Width="140"/>
         <Label x:Name="lblPesel" Content="PESEL" HorizontalAlignment="Left" Margin="7,77,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPesel" HorizontalAlignment="Left" Height="23" Margin="48,80,0,0" TextWrapping="Wrap" Text="{Binding Path=Pesel}" VerticalAlignment="Top" Width="120" LostFocus="txtPesel_LostFocus"/>
+        <TextBox x:Name="txtPesel" HorizontalAlignment="Left" Height="23" Margin="48,80,0,0" TextWrapping="Wrap" Text="{Binding Path=Pesel}" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblBirthDate" Content="Data urodzenia" HorizontalAlignment="Left" Margin="180,77,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtBirthDate" HorizontalAlignment="Left" Height="23" Margin="276,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="txtBirthDate" HorizontalAlignment="Left" Height="23" Margin="276,80,0,0" TextWrapping="Wrap" Text="{Binding Path=BirthDate}" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Label x:Name="lblGender" Content="Płeć" HorizontalAlignment="Left" Margin="411,77,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtGender" HorizontalAlignment="Left" Height="23" Margin="443,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="34" IsEnabled="False"/>
+        <TextBox x:Name="txtGender" HorizontalAlignment="Left" Height="23" Margin="443,80,0,0" TextWrapping="Wrap" Text="{Binding Path=Gender}" VerticalAlignment="Top" Width="34" IsEnabled="False"/>
         <Label x:Name="lblInsuranceNo" Content="Nr legitymacji" HorizontalAlignment="Left" Margin="7,114,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtInsuranceNo" HorizontalAlignment="Left" Height="23" Margin="95,117,0,0" TextWrapping="Wrap" Text="{Binding Path=InsuranceNo}" VerticalAlignment="Top" Width="120" LostFocus="txtPesel_LostFocus"/>
+        <TextBox x:Name="txtInsuranceNo" HorizontalAlignment="Left" Height="23" Margin="95,117,0,0" TextWrapping="Wrap" Text="{Binding Path=InsuranceNo}" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblInsuranceDate" Content="Data wydania" HorizontalAlignment="Left" Margin="224,114,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtInsuranceDate" HorizontalAlignment="Left" Height="23" Margin="310,117,0,0" TextWrapping="Wrap" Text="{Binding Path=InsuranceDate}" VerticalAlignment="Top" Width="120" LostFocus="txtPesel_LostFocus"/>
+        <TextBox x:Name="txtInsuranceDate" HorizontalAlignment="Left" Height="23" Margin="310,117,0,0" TextWrapping="Wrap" Text="{Binding Path=InsuranceDate}" VerticalAlignment="Top" Width="120" />
         <Label x:Name="lblInsurer" Content="Ubezpieczyciel" HorizontalAlignment="Left" Margin="443,117,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lstInsurer" SelectedItem="{Binding Path=Insurer}" HorizontalAlignment="Left" Height="20" Margin="536,117,0,0" VerticalAlignment="Top" Width="160">
             <ListBoxItem Content="ZUS"/>

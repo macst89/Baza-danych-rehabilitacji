@@ -19,7 +19,7 @@
             <Image x:Name="imgPacjent" HorizontalAlignment="Left" Height="40" Margin="10,10,0,0" VerticalAlignment="Top" Width="40" Source="D:\GitHub\Baza danych rehabilitacji\Baza danych rehabilitacji\Images\Pacjent_64.png"/>
         </GroupBox>
         <Button x:Name="btnRejestruj" Content="Rejestracja pacjenta" HorizontalAlignment="Left" Margin="89,61,0,0" VerticalAlignment="Top" Width="127" Height="34" Click="btnRejestruj_Click"/>
-        <Button x:Name="btnDodajSkierowanie" Content="Dodaj skierowanie pacjenta" HorizontalAlignment="Left" Margin="242,61,0,0" VerticalAlignment="Top" Width="155" Height="34" Click="btnDodajSkierowanie_Click" IsEnabled="False"/>
+        <Button x:Name="btnDodajSkierowanie" Content="Dodaj skierowanie pacjenta" HorizontalAlignment="Left" Margin="242,61,0,0" VerticalAlignment="Top" Width="155" Height="34" Click="btnDodajSkierowanie_Click"/>
         <Button x:Name="btnDodajWizyte" Content="Dodaj wizytę lekarza" HorizontalAlignment="Left" Margin="89,168,0,0" VerticalAlignment="Top" Width="127" Height="39" IsEnabled="False"/>
         <Button x:Name="btnListaPacjentow" Content="Lista pacjentów" HorizontalAlignment="Left" Margin="422,61,0,0" VerticalAlignment="Top" Width="174" Height="34" Click="btnListaPacjentow_Click" />
         <Button x:Name="btnListaWizyt" Content="Utwórz listę wizyt" HorizontalAlignment="Left" Margin="242,168,0,0" VerticalAlignment="Top" Width="155" Height="39" IsEnabled="False"/>

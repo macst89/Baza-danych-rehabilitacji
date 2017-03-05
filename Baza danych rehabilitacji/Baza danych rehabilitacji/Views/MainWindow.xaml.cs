@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Baza_danych_rehabilitacji.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,23 +45,33 @@ namespace Baza_danych_rehabilitacji
 
         private void btnDodajSkierowanie_Click(object sender, RoutedEventArgs e)
         {
-            Rejestracja rejestracja = new Rejestracja();
-            if (rejestracja.IsActive == false)
+            Skierowanie refferal = new Skierowanie();
+            if (refferal.IsActive == false)
             {
 
-                rejestracja.Show();
+                refferal.Show();
             }
             else
             {
                 MessageBox.Show("Okno rejestracji jest już otwarte.");
-                rejestracja.Close();
+                refferal.Close();
             }
 
         }
 
         private void btnListaPacjentow_Click(object sender, RoutedEventArgs e)
         {
-            
+            PatientList patientlist = new PatientList();
+            if (patientlist.IsActive == false)
+            {
+
+                patientlist.Show();
+            }
+            else
+            {
+                MessageBox.Show("Okno rejestracji jest już otwarte.");
+                patientlist.Close();
+            }
         }
     }
 }

@@ -5,9 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Baza_danych_rehabilitacji.Views"
         mc:Ignorable="d"
+        DataContext="{StaticResource patient}"
+        
         Title="Lista pacjentów" Height="473.399" Width="737.243">
+    
+
+
+
+
     <Grid>
-        <Grid Height="37" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="215*"/>
+            <ColumnDefinition Width="514*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Height="37" VerticalAlignment="Top" Grid.ColumnSpan="2">
             <Menu x:Name="menu" Margin="0,0,0,15">
                 <MenuItem Header="Plik">
                     <MenuItem Header="Zapisz"/>
@@ -25,24 +36,24 @@
             </Menu>
 
         </Grid>
-        <GroupBox x:Name="gbPatientData" Header="Dane Pacjenta" Margin="0,20,4,0" VerticalAlignment="Top" Height="161"/>
+        <GroupBox x:Name="gbPatientData" Header="Dane Pacjenta" Margin="0,20,4,0" VerticalAlignment="Top" Height="161" Grid.ColumnSpan="2"/>
 
         <Label x:Name="lblName" Content="Imię" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="48,40,0,0" TextWrapping="Wrap" Text="{Binding Path=Name}" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblSurname" Content="Nazwisko" HorizontalAlignment="Left" Margin="179,37,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="23" Margin="244,40,0,0" TextWrapping="Wrap" Text="{Binding Path=Surname}" VerticalAlignment="Top" Width="140"/>
+        <Label x:Name="lblSurname" Content="Nazwisko" HorizontalAlignment="Left" Margin="179,37,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="23" Margin="29,40,0,0" TextWrapping="Wrap" Text="{Binding Path=Surname}" VerticalAlignment="Top" Width="140" Grid.Column="1"/>
         <Label x:Name="lblPesel" Content="PESEL" HorizontalAlignment="Left" Margin="7,77,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPesel" HorizontalAlignment="Left" Height="23" Margin="48,80,0,0" TextWrapping="Wrap" Text="{Binding Path=Pesel}" VerticalAlignment="Top" Width="120" LostFocus="txtPesel_LostFocus"/>
-        <Label x:Name="lblBirthDate" Content="Data urodzenia" HorizontalAlignment="Left" Margin="180,77,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtBirthDate" HorizontalAlignment="Left" Height="23" Margin="276,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <Label x:Name="lblGender" Content="Płeć" HorizontalAlignment="Left" Margin="411,77,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtGender" HorizontalAlignment="Left" Height="23" Margin="443,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="34" IsEnabled="False"/>
+        <TextBox x:Name="txtPesel" HorizontalAlignment="Left" Height="23" Margin="48,80,0,0" TextWrapping="Wrap" Text="{Binding Path=Pesel}" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblBirthDate" Content="Data urodzenia" HorizontalAlignment="Left" Margin="180,77,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtBirthDate" HorizontalAlignment="Left" Height="23" Margin="61,80,0,0" TextWrapping="Wrap" Text="{Binding Path=BirthDate}" VerticalAlignment="Top" Width="120" IsEnabled="False" Grid.Column="1"/>
+        <Label x:Name="lblGender" Content="Płeć" HorizontalAlignment="Left" Margin="196,77,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="txtGender" HorizontalAlignment="Left" Height="23" Margin="228,80,0,0" TextWrapping="Wrap" Text="{Binding Path=Gender}" VerticalAlignment="Top" Width="34" IsEnabled="False" Grid.Column="1"/>
         <Label x:Name="lblInsuranceNo" Content="Nr legitymacji" HorizontalAlignment="Left" Margin="7,114,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtInsuranceNo" HorizontalAlignment="Left" Height="23" Margin="95,117,0,0" TextWrapping="Wrap" Text="{Binding Path=InsuranceNo}" VerticalAlignment="Top" Width="120" LostFocus="txtPesel_LostFocus"/>
-        <Label x:Name="lblInsuranceDate" Content="Data wydania" HorizontalAlignment="Left" Margin="224,114,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtInsuranceDate" HorizontalAlignment="Left" Height="23" Margin="310,117,0,0" TextWrapping="Wrap" Text="{Binding Path=InsuranceDate}" VerticalAlignment="Top" Width="120" LostFocus="txtPesel_LostFocus"/>
-        <Label x:Name="lblInsurer" Content="Ubezpieczyciel" HorizontalAlignment="Left" Margin="443,117,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lstInsurer" SelectedItem="{Binding Path=Insurer}" HorizontalAlignment="Left" Height="20" Margin="536,117,0,0" VerticalAlignment="Top" Width="160">
+        <TextBox x:Name="txtInsuranceNo" HorizontalAlignment="Left" Height="23" Margin="95,117,0,0" TextWrapping="Wrap" Text="{Binding Path=InsuranceNo}" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblInsuranceDate" Content="Data wydania" HorizontalAlignment="Left" Margin="9,114,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="txtInsuranceDate" HorizontalAlignment="Left" Height="23" Margin="95,117,0,0" TextWrapping="Wrap" Text="{Binding Path=InsuranceDate}" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label x:Name="lblInsurer" Content="Ubezpieczyciel" HorizontalAlignment="Left" Margin="228,117,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <ListBox x:Name="lstInsurer" SelectedItem="{Binding Path=Insurer}" HorizontalAlignment="Left" Height="20" Margin="321,117,0,0" VerticalAlignment="Top" Width="160" Grid.Column="1">
             <ListBoxItem Content="ZUS"/>
             <ListBoxItem Content="KRUS"/>
             <ListBoxItem Content="MSWiA"/>
@@ -51,16 +62,47 @@
             <ListBoxItem Content="Emerytura współmażonka"/>
         </ListBox>
         <Label x:Name="lblEntitlement" Content="Uprawnienia" HorizontalAlignment="Left" Margin="7,145,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lstEntitlement" SelectedItem="{Binding Path=Entitlement}" HorizontalAlignment="Left" Height="20" Margin="95,151,0,0" VerticalAlignment="Top" Width="160">
+        <ListBox x:Name="lstEntitlement" SelectedItem="{Binding Path=Entitlement}" HorizontalAlignment="Left" Height="20" Margin="95,151,0,0" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2">
             <ListBoxItem Content=""/>
             <ListBoxItem Content="Kombatant"/>
             <ListBoxItem Content="Represjonowany"/>
         </ListBox>
-        <Label x:Name="lbId" Content="Id" HorizontalAlignment="Left" Margin="408,38,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="433,41,0,0" TextWrapping="Wrap" Text="{Binding Path=PersonId}" VerticalAlignment="Top" Width="35" IsEnabled="False"/>
+        <Label x:Name="lbId" Content="Id" HorizontalAlignment="Left" Margin="193,38,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="23" Margin="218,41,0,0" TextWrapping="Wrap" Text="{Binding Path=PersonId}" VerticalAlignment="Top" Width="35" IsEnabled="False" Grid.Column="1"/>
         <Button x:Name="btnPrevious" Content="Poprzedni" HorizontalAlignment="Left" Margin="14,196,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnNext" Content="Następny" HorizontalAlignment="Left" Margin="105,196,0,0" VerticalAlignment="Top" Width="75"/>
-        <ListBox ItemsSource="{Binding Path=patients}" x:Name="lbPatients" HorizontalAlignment="Left" Height="199" Margin="10,234,0,0" VerticalAlignment="Top" Width="709"/>
+        <ListBox x:Name="lbPatients" HorizontalAlignment="Left" Height="199" Margin="10,234,0,0" VerticalAlignment="Top" Width="709" Grid.ColumnSpan="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                        <TextBlock Text="{Binding Path=Surname}" Grid.Column="1"></TextBlock>
+                        <TextBlock Text="{Binding Path=Id}" Grid.Column="1"></TextBlock>
+                        <TextBlock Text="{Binding Path=Pesel}" Grid.Column="1"></TextBlock>
+                        <TextBlock Text="{Binding Path=BirthDate}" Grid.Column="1"></TextBlock>
+                        <TextBlock Text="{Binding Path=Gender}" Grid.Column="1"></TextBlock>
+                        <TextBlock Text="{Binding Path=InsuranceNo}" Grid.Column="1"></TextBlock>
+                        <TextBlock Text="{Binding Path=InsuranceDate}" Grid.Column="1"></TextBlock>
+                        <TextBlock Text="{Binding Path=Insurer}" Grid.Column="1"></TextBlock>
+                        <TextBlock Text="{Binding Path=Entitlement}" Grid.Column="1"></TextBlock>
+                    </Grid>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
     </Grid>
 </Window>

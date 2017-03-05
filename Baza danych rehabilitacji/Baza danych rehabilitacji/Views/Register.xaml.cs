@@ -25,32 +25,8 @@ namespace Baza_danych_rehabilitacji
         {
             InitializeComponent();
             lbAddresses.ItemsSource = patient.PersonAddress;
-            
         }
-        List<Patient> patients = new List<Patient>();
-        Patient patient = new Patient();
-        Address address = new Address();
-        
 
-        private void txtPesel_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (txtPesel.Text != null && txtPesel.Text.Length == 11)
-            {
-                string pesel = txtPesel.Text;
-                int plec = Convert.ToInt32(pesel.Substring(9, 1));
-                string data_ur = "19" + pesel.Substring(0, 2) + "-" + pesel.Substring(2, 2) + "-" + pesel.ToString().Substring(4, 2);
-                txtBirthDate.Text = data_ur;
-                if (plec % 2 != 0)
-                {
-                    txtGender.Text = "M";
-                }
-                else
-                {
-                    txtGender.Text = "K";
-                }
-                
-            }
-        }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
